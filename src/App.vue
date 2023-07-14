@@ -43,6 +43,11 @@
 
   export default {
 
+    // props are the way that we pass data from a parent component down to its child components
+    props: {
+
+    },
+
 
 
     name: "app",
@@ -53,6 +58,7 @@
 
 
 
+    // data is the private memory of each component where you can store any ariables you need. Props are how you pass this data from a parent component down to a child component. Data is the memory of each component. This is where you would store data and any other variables you want to track.
     data() {
       return {
         ToDoItems: [
@@ -64,7 +70,9 @@
     },
 
 
-
+    // Will method be called in an HTML attribute above? use methods:
+    // Will method be called within {{ }} tags in text in the HTML above? Use computed:
+    // Whenever you want to filter or transform your data, typically you will use a computer property for that purpose. These do not take arguments.
     methods: {
       addToDo(toDoLabel) {
         this.ToDoItems.push(
@@ -97,7 +105,8 @@
     },
 
 
-
+    // computed properties are great for: filtering data, handle calculations
+    // can also check whether a condition is true, then use v-if within the template to determine whether to display a block of code or not
     computed: {
       getSummary() {
         const numberCompletedItems = this.ToDoItems.filter((item) => 

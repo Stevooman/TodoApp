@@ -31,7 +31,7 @@
   export default {
 
 
-
+    // methods holds any methods we might need to call within this component
     methods: {
       onSubmit() {
         if (this.label === '') {
